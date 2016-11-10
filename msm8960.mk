@@ -171,6 +171,10 @@ PRODUCT_PACKAGES += \
 	init.qcom.sh \
 	ueventd.qcom.rc 
 
+# DRM
+PRODUCT_PACKAGES += \
+    libshims_wvm
+
 #Camera
 PRODUCT_PACKAGES += \
 	CE150F00.bin \

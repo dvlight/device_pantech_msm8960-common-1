@@ -15,15 +15,20 @@
 #
 # inherit from the proprietary version
 
-COMMON_PATH := device/pantech/iron-common
-
 BOARD_VENDOR := pantech
+
+COMMON_PATH := device/pantech/iron-common
 
 TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := msm8960
 TARGET_NO_BOOTLOADER := true
+
+# CAF HALs
+TARGET_QCOM_AUDIO_VARIANT := caf-msm8960
+TARGET_QCOM_MEDIA_VARIANT := caf-msm8960
+TARGET_QCOM_DISPLAY_VARIANT := caf-msm8960
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8960
@@ -37,18 +42,58 @@ TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := krait
 
 # Kernel
-BOARD_KERNEL_CMDLINE := console=NULL,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 loglevel=0 vmalloc=0x16000000 maxcpus=2 androidboot.selinux=permissive
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80200000
 BOARD_KERNEL_PAGESIZE := 2048
----
-
-
-#Boot and recovery config
+BOARD_RAMDISK_OFFSET := 0x2000000
+BOARD_KERNEL_IMAGE_NAME := zImage
 BOARD_FORCE_RAMDISK_ADDRESS := 0x82200000
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x2000000
-BOARD_KERNEL_CMDLINE := console=NULL,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 loglevel=0 vmalloc=0x16000000 maxcpus=2 androidboot.selinux=permissive
+TARGET_KERNEL_ARCH := arm
+TARGET_KERNEL_HEADER_ARCH := arm
+TARGET_KERNEL_VERSION := 3.4.108
+TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_KERNEL_SOURCE := kernel/ef52l
 
+BOARD_KERNEL_CMDLINE := console=NULL,115200,n8 androidboot.hardware=qcom
+BOARD_KERNEL_CMDLINE += user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3
+BOARD_KERNEL_CMDLINE += loglevel=0 vmalloc=0x16000000 maxcpus=2
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+
+# ANT+
+BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
+
+# Assert
+TARGET_BOARD_INFO_FILE := $(PLATFORM_PATH)/board-info.txt
+
+# APEX image
+DEXPREOPT_GENERATE_APEX_IMAGE := true
+
+# Audio
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BOARD_USES_ALSA_AUDIO := true
+AUDIO_USE_LL_AS_PRIMARY_OUTPUT := true
+
+USE_CUSTOM_AUDIO_POLICY := 1
+USE_XML_AUDIO_POLICY_CONF := 1
+
+#Boot and recovery config
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 BOARD_SUPPRESS_EMMC_WIPE := true
@@ -74,11 +119,6 @@ TARGET_PROVIDES_LIBLIGHT 			:= true
 
 HAVE_ADRENO_SOURCE				:= false
 OVERRIDE_RS_DRIVER 				:= libRSDriver_adreno.so
-
-# Audio
-BOARD_USES_ALSA_AUDIO := true
-AUDIO_USE_LL_AS_PRIMARY_OUTPUT := true
-USE_CUSTOM_AUDIO_POLICY := 1
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true

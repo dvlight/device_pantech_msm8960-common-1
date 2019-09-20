@@ -188,6 +188,27 @@ NEED_KERNEL_MODULE_SYSTEM := true
 # EXFAT
 TARGET_EXFAT_DRIVER := sdfat
 
+# FM
+BOARD_HAVE_FM_RADIO := true
+BOARD_DISABLE_FMRADIO_LIBJNI := true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #Boot and recovery config
 TARGET_USERIMAGES_USE_EXT4 := true

@@ -14,11 +14,12 @@
 # limitations under the License.
 #
 # inherit from the proprietary version
--include vendor/pantech/msm8960-common/BoardConfigVendor.mk
-TARGET_SPECIFIC_HEADER_PATH 		:= device/pantech/msm8960-common/include
-TARGET_RELEASETOOLS_EXTENSIONS 		:= device/pantech/msm8960-common
 
-BOARD_VENDOR 					:= pantech
+COMMON_PATH := device/pantech/iron-common
+
+BOARD_VENDOR := pantech
+
+TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8960

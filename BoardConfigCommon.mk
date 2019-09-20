@@ -22,7 +22,7 @@ BOARD_VENDOR := pantech
 TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := MSM8960
+TARGET_BOOTLOADER_BOARD_NAME := msm8960
 TARGET_NO_BOOTLOADER := true
 
 # Platform
@@ -36,12 +36,15 @@ TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := krait
 
-# QCOM hardware
-BOARD_USES_QCOM_HARDWARE := true
-
-#Boot and recovery config
+# Kernel
+BOARD_KERNEL_CMDLINE := console=NULL,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 loglevel=0 vmalloc=0x16000000 maxcpus=2 androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80200000
 BOARD_KERNEL_PAGESIZE := 2048
+---
+
+
+#Boot and recovery config
 BOARD_FORCE_RAMDISK_ADDRESS := 0x82200000
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x2000000
 BOARD_KERNEL_CMDLINE := console=NULL,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 loglevel=0 vmalloc=0x16000000 maxcpus=2 androidboot.selinux=permissive

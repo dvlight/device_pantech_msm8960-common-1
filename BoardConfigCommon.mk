@@ -155,6 +155,18 @@ TARGET_USES_ION	:= true
 TARGET_USES_NEW_ION_API := true
 TARGET_DISPLAY_INSECURE_MM_HEAP := true
 
+# Enable dexpreopt to speed boot time
+ifeq ($(HOST_OS),linux)
+  ifneq ($(TARGET_BUILD_VARIANT),eng)
+    ifeq ($(WITH_DEXPREOPT),)
+			DONT_DEXPREOPT_PREBUILTS := true
+      WITH_DEXPREOPT := true
+      WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
+    endif
+  endif
+endif
+#DONT_DEXPREOPT_PREBUILTS := true
+
 # Filesystem
 BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_BOOTIMAGE_PARTITION_SIZE := 20971520 #20MB
@@ -170,6 +182,12 @@ TARGET_EXFAT_DRIVER := sdfat
 TARGET_VFAT_DRIVER := sdfat
 
 TARGET_OTA_ASSERT_DEVICE := ef52l,ef52s,ef52k
+# Install kernel modules on system
+NEED_KERNEL_MODULE_SYSTEM := true
+
+# EXFAT
+TARGET_EXFAT_DRIVER := sdfat
+
 
 #Boot and recovery config
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -219,17 +237,6 @@ TARGET_PROVIDES_GPS_LOC_API := true
 
 # PowerHAL
 TARGET_POWERHAL_VARIANT			:= qcom
-
-
-# Enable dex-preoptimization to speed up first boot sequence
-ifeq ($(HOST_OS),linux)
-  ifeq ($(TARGET_BUILD_VARIANT),user)
-    ifeq ($(WITH_DEXPREOPT),)
-      WITH_DEXPREOPT := true
-    endif
-  endif
-endif
-DONT_DEXPREOPT_PREBUILTS := true
 
 # Init
 TARGET_NO_INITLOGO := false

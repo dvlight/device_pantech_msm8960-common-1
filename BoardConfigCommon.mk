@@ -22,7 +22,7 @@ COMMON_PATH := device/pantech/iron-common
 TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := msm8960
+TARGET_BOOTLOADER_BOARD_NAME := MSM8960
 TARGET_NO_BOOTLOADER := true
 
 # CAF HALs
@@ -200,8 +200,9 @@ TARGET_EXFAT_DRIVER := exfat
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USERIMAGES_USE_EXT4 := true
-
 TARGET_USES_MKE2FS := true
+
+BOARD_SUPPRESS_EMMC_WIPE := true
 
 TARGET_OTA_ASSERT_DEVICE := ef52l,ef52s,ef52k
 
@@ -210,6 +211,7 @@ TARGET_USES_INTERACTION_BOOST := true
 TARGET_HAS_NO_WLAN_STATS := true
 TARGET_HAS_NO_POWER_STATS := true
 TARGET_BOOTANIMATION_MULTITHREAD_DECODE := true
+TARGET_POWERHAL_VARIANT	:= qcom
 
 # QCOM
 BOARD_USES_QCOM_HARDWARE := true
@@ -228,44 +230,42 @@ TARGET_RIL_VARIANT := caf
 TARGET_USES_OLD_MNC_FORMAT := true
 BOARD_RIL_CLASS := ../../../device/pantech/iron-common/ril/
 
-#Boot and recovery config
-TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_USERIMAGES_USE_F2FS := true
-BOARD_SUPPRESS_EMMC_WIPE := true
+# Flags
+BOARD_NO_SECURE_DISCARD := true
+
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=7
+
+MALLOC_SVELTE := true
+
+# SELinux
+include device/qcom/sepolicy/sepolicy.mk
+BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
+
+SELINUX_IGNORE_NEVERALLOWS := true
+WITHOUT_LINEAGE_SEPOLICY := true
 
 #Init
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_pantech
 TARGET_RECOVERY_DEVICE_MODULES := libinit_pantech
+TARGET_NO_INITLOGO := true
 
-BOARD_USES_OVERLAY 				:= true
-USE_OPENGL_RENDERER 				:= true
-TARGET_USES_C2D_COMPOSITION 			:= true
+BOARD_USES_OVERLAY := true
+USE_OPENGL_RENDERER := true
+TARGET_USES_C2D_COMPOSITION := true
 
 # LightHAL
-TARGET_PROVIDES_LIBLIGHT 			:= true
+TARGET_PROVIDES_LIBLIGHT := true
 
-HAVE_ADRENO_SOURCE				:= false
-OVERRIDE_RS_DRIVER 				:= libRSDriver_adreno.so
+HAVE_ADRENO_SOURCE := false
+OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
 # QCOM enhanced A/V
-TARGET_ENABLE_QC_AV_ENHANCEMENTS 	:= true
+TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 
-BOARD_USES_SECURE_SERVICES 		:= true
+BOARD_USES_SECURE_SERVICES := true
 
-BOARD_USES_EXTRA_THERMAL_SENSOR 	:= true
-
-#Use aosp hardware
-BOARD_USES_AOSP_HARDWARE := true
-
-#Preload Boot Animation
-TARGET_BOOTANIMATION_PRELOAD 		:= true
-
-# PowerHAL
-TARGET_POWERHAL_VARIANT			:= qcom
-
-# Init
-TARGET_NO_INITLOGO := false
+BOARD_USES_EXTRA_THERMAL_SENSOR := true
 
 # Enable keymaster app checking
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
@@ -275,31 +275,10 @@ BOARD_VOLD_MAX_PARTITIONS := 28
 # Sensors
 TARGET_NEEDS_GCC_LIBC := true
 
-# Flags
-BOARD_NO_SECURE_DISCARD := true
+PRODUCT_GMS_CLIENTID_BASE := android-pantech
 
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=7
-
-MALLOC_SVELTE := true
-
-#BOARD_USES_QC_TIME_SERVICES 		:= true
-
-PRODUCT_GMS_CLIENTID_BASE 			:= android-pantech
 # Enable Minikin text layout engine
-USE_MINIKIN 						:= true
-
-#Enable prebuild chromium for cut time build
-PRODUCT_PREBUILT_WEBVIEWCHROMIUM 	:= yes
-
-# Include an expanded selection of fonts
-EXTENDED_FONT_FOOTPRINT 			:= true
-
-# qcom sepolicy, common device source
-include device/qcom/sepolicy/sepolicy.mk
-include device/qcom/common/Android.mk
-
-#BOARD_SEPOLICY_DIRS += \
-       device/pantech/msm8960-common/sepolicy
+USE_MINIKIN := true
        
 # Wifi
 BOARD_HAS_QCOM_WLAN              		:= true
@@ -312,3 +291,6 @@ BOARD_HOSTAPD_PRIVATE_LIB        		:= lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 WIFI_DRIVER_MODULE_NAME          		:= "wlan"
 WIFI_DRIVER_FW_PATH_STA          		:= "sta"
 WIFI_DRIVER_FW_PATH_AP           		:= "ap"
+
+# Inherit the proprietary files
+-include vendor/pantech/iron-common/BoardConfigVendor.mk

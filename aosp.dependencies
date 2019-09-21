@@ -1,0 +1,6 @@
+[
+  {
+    "repository": "android_kernel_pantech_ef52",
+    "target_path": "kernel/ef52"
+  }
+]

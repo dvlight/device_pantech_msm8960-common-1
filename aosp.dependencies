@@ -2,5 +2,9 @@
   {
     "repository": "android_kernel_pantech_ef52",
     "target_path": "kernel/ef52"
+  },
+  {
+    "repository":  "vendor_pantech_iron-common",
+    "target_path": "vendor/pantech/iron-commmon"
   }
 ]

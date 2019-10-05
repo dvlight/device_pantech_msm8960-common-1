@@ -30,7 +30,7 @@ $(call inherit-product-if-exists, build/target/product/embedded.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # Inherit proprietary files
-$(call inherit-product, vendor/pantech/iron-common/iron-common-vendor.mk)
+$(call inherit-product, vendor/pantech/msm8960-common/msm8960-common-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 

@@ -1,8 +1,8 @@
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter ef52 ef52l ef52s ef52k a870 a870l a870s a870k IM-A870 IM-A870l IM-A870s IM-A870k,$(TARGET_DEVICE)),)
+ifneq ($(filter ef52 ef52l ef52s ef52k IM-A870 IM-A870l IM-A870s IM-A870k,$(TARGET_DEVICE)),)
 
-$(warning $(TARGET_DEVICE) device found for iron-common)
+$(warning $(TARGET_DEVICE) device found for msm8960-common)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 

@@ -1,10 +1,10 @@
 [
   {
-    "repository": "android_kernel_pantech_ef52",
-    "target_path": "kernel/ef52"
+    "repository": "android_kernel_pantech_msm8960",
+    "target_path": "kernel/msm8960"
   },
   {
-    "repository":  "vendor_pantech_iron-common",
-    "target_path": "vendor/pantech/iron-commmon"
+    "repository":  "vendor_pantech_msm8960-common",
+    "target_path": "vendor/pantech/msm8960-commmon"
   }
 ]

@@ -1,7 +1,7 @@
 [
   {
     "repository": "android_kernel_pantech_msm8960",
-    "target_path": "kernel/msm8960"
+    "target_path": "kernel/pantech/msm8960"
   },
   {
     "repository":  "vendor_pantech_msm8960-common",

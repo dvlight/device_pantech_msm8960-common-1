@@ -231,6 +231,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml
 	
 # System properties
--include $(LOCAL_PATH)/vendor_prop.mk
+-include $(LOCAL_PATH)/system_prop.mk
 
 # $(call inherit-product, hardware/qcom/msm8960/msm8960.mk)

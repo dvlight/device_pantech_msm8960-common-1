@@ -101,7 +101,6 @@ TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 #Media
 TARGET_USES_MEDIA_EXTENSIONS := true
 
-
 #Ril class
 BOARD_RIL_CLASS := ../../../device/pantech/msm8960-common/ril/
 TARGET_RIL_VARIANT := caf
@@ -123,13 +122,13 @@ TARGET_POWERHAL_VARIANT			:= qcom
 
 
 # Enable dex-preoptimization to speed up first boot sequence
-ifeq ($(HOST_OS),linux)
-  ifeq ($(TARGET_BUILD_VARIANT),user)
-    ifeq ($(WITH_DEXPREOPT),)
-      WITH_DEXPREOPT := true
-    endif
-  endif
-endif
+#ifeq ($(HOST_OS),linux)
+#  ifeq ($(TARGET_BUILD_VARIANT),user)
+#    ifeq ($(WITH_DEXPREOPT),)
+#      WITH_DEXPREOPT := true
+#    endif
+#  endif
+#endif
 DONT_DEXPREOPT_PREBUILTS := true
 
 # Init

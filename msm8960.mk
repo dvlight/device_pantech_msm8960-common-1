@@ -21,9 +21,6 @@ $(call inherit-product, vendor/pantech/msm8960-common/msm8960-common-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
-#Google Camera
-PRODUCT_PACKAGES += Snap
-
 # WiFi
 PRODUCT_PACKAGES += \
 	libwfcu \

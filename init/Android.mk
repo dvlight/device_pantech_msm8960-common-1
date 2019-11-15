@@ -23,5 +23,7 @@ LOCAL_CFLAGS := -Wall -DANDROID_TARGET=\"$(TARGET_BOARD_PLATFORM)\"
 LOCAL_SRC_FILES := init_pantech.cpp
 LOCAL_MODULE := libinit_pantech
 
+LOCAL_STATIC_LIBRARIES := libbase
+
 include $(BUILD_STATIC_LIBRARY)
 # Add by Le Hoang to build as standalone lib.

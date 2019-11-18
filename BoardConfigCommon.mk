@@ -92,7 +92,7 @@ BOARD_USES_EXTRA_THERMAL_SENSOR 	:= true
 BOARD_GLOBAL_CFLAGS += -DCAMERA_VENDOR_L_COMPAT
 TARGET_PROVIDES_CAMERA_HAL := true
 USE_DEVICE_SPECIFIC_CAMERA := true
-BOARD_USES_CAMERA_FAST_AUTOFOCUS 	:= true
+BOARD_USES_CAMERA_FAST_AUTOFOCUS := true
 BOARD_GLOBAL_CFLAGS += -DPANTECH_CAMERA_HARDWARE
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 BOARD_GLOBAL_CFLAGS += -DMETADATA_CAMERA_SOURCE
@@ -104,9 +104,6 @@ TARGET_USES_MEDIA_EXTENSIONS := true
 #Ril class
 BOARD_RIL_CLASS := ../../../device/pantech/msm8960-common/ril/
 TARGET_RIL_VARIANT := caf
-
-#Use cyanogenmod hardware
-BOARD_USES_CYANOGEN_HARDWARE := true
 
 #Preload Boot Animation
 TARGET_BOOTANIMATION_PRELOAD 		:= true
@@ -122,13 +119,13 @@ TARGET_POWERHAL_VARIANT			:= qcom
 
 
 # Enable dex-preoptimization to speed up first boot sequence
-#ifeq ($(HOST_OS),linux)
-#  ifeq ($(TARGET_BUILD_VARIANT),user)
-#    ifeq ($(WITH_DEXPREOPT),)
-#      WITH_DEXPREOPT := true
-#    endif
-#  endif
-#endif
+ifeq ($(HOST_OS),linux)
+  ifeq ($(TARGET_BUILD_VARIANT),user)
+    ifeq ($(WITH_DEXPREOPT),)
+      WITH_DEXPREOPT := true
+    endif
+  endif
+endif
 DONT_DEXPREOPT_PREBUILTS := true
 
 # Init

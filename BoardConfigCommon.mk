@@ -166,11 +166,11 @@ PRODUCT_PREBUILT_WEBVIEWCHROMIUM 	:= yes
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT 			:= true
 
-# qcom sepolicy
+# Sepolicy
 include device/qcom/sepolicy/sepolicy.mk
-
-#BOARD_SEPOLICY_DIRS += \
-       device/pantech/msm8960-common/sepolicy
+BOARD_SEPOLICY_DIRS += device/pantech/msm8960-common/sepolicy
+# SELinux
+SELINUX_IGNORE_NEVERALLOWS := true
        
 # Wifi
 BOARD_HAS_QCOM_WLAN              		:= true

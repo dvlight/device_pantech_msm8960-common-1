@@ -23,9 +23,9 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # WiFi
 PRODUCT_PACKAGES += \
-	libwfcu \
-	libwpa_client \
-	hostapd \
+    libwfcu \
+    libwpa_client \
+    hostapd \
     hostapd_default.conf \
     hostapd.accept \
     hostapd.deny \
@@ -36,10 +36,10 @@ PRODUCT_PACKAGES += \
     wcnss_service
 	
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/configs/spn-conf.xml:system/etc/spn-conf.xml \
-	$(LOCAL_PATH)/configs/apns-conf.xml:system/etc/apns-conf.xml \
-	$(LOCAL_PATH)/configs/apns-conf.xml:system/etc/old-apns-conf.xml \
-	$(LOCAL_PATH)/etc/qosmgr_rules.xml:system/etc/qosmgr_rules.xml
+    $(LOCAL_PATH)/configs/spn-conf.xml:system/etc/spn-conf.xml \
+    $(LOCAL_PATH)/configs/apns-conf.xml:system/etc/apns-conf.xml \
+    $(LOCAL_PATH)/configs/apns-conf.xml:system/etc/old-apns-conf.xml \
+    $(LOCAL_PATH)/etc/qosmgr_rules.xml:system/etc/qosmgr_rules.xml
 	
 # Live Wallpapers
 PRODUCT_PACKAGES += \
@@ -91,12 +91,12 @@ PRODUCT_PACKAGES += \
 	
 # Wifi        
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
-	$(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
-	$(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
-	$(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
-	$(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
-	$(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
+    $(LOCAL_PATH)/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+    $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
+    $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
+    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
+    $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
+    $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
 
 # WiFi binary
 PRODUCT_PACKAGES += \
@@ -145,12 +145,12 @@ PRODUCT_COPY_FILES += \
 
 # Media
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml \
-	$(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
-	$(LOCAL_PATH)/configs/interface_permissions.xml:system/etc/permissions/interface_permissions.xml \
-	frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
-	frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
-	frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
+    $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml \
+    $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
+    $(LOCAL_PATH)/configs/interface_permissions.xml:system/etc/permissions/interface_permissions.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
 
 #Rootdir
 PRODUCT_PACKAGES += \

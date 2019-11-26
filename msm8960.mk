@@ -209,7 +209,11 @@ PRODUCT_PACKAGES += \
 # NFC access control + feature files + configuration
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml
-	
+
+# MiXplorer
+PRODUCT_PACKAGES += \
+    MiXplorer
+
 # System properties
 -include $(LOCAL_PATH)/system_prop.mk
 

@@ -83,7 +83,7 @@ on boot
     chown nfc nfc /dev/pn544
  
 # P12911
-    chmod 0666 /dev/led_fops
+	chmod 0666 /dev/led_fops
 
 # cypress tma4xx
     chmod 0666 /dev/touch_monitor
@@ -96,8 +96,8 @@ on boot
 #   setprop persist.cne.UseCne  none
 
 # made for common pantech folder [FEATURE_LGU_CP_UICC_SUPPORT_NFC]
-    mkdir /dev/pantech 
-    chown system system /dev/pantech
+     mkdir /dev/pantech 
+     chown system system /dev/pantech
 
     #[FEATURE_LGU_CP_LTE_UPLUS_KNIGHT_WDIAG]
     # mkdir /dev/socket/ukd 0770 radio system
@@ -374,7 +374,7 @@ on post-fs-data
    # mkdir /data/data/com.ubivelox.wipiplayer/W 0770 system lgt_gid 
    # mkdir /data/LGTContents 0770 system lgt_gid
    # mkdir /data/LGTContents/app   0770 system lgt_gid
-   # mkdir /data/LGTContents/bell  0770 system lgt_gid
+  #  mkdir /data/LGTContents/bell  0770 system lgt_gid
    # mkdir /data/LGTContents/DLtmp 0770 system lgt_gid
    # mkdir /data/LGTContents/music 0770 system lgt_gid
    # mkdir /data/LGTContents/video 0770 system lgt_gid    
@@ -431,10 +431,10 @@ on post-fs-data
 
 # Export GPIO56 for fusion targets to enable/disable hub
 service usbhub_init /system/bin/usbhub_init
-    class late_start
-    user root
-    disabled
-    oneshot
+   class late_start
+   user root
+   disabled
+   oneshot
 
 on property:init.svc.surfaceflinger=stopped
     stop ppd
@@ -663,12 +663,12 @@ service dhcpcd_bnep4 /system/bin/dhcpcd -BKLG
     oneshot
 
 on property:crypto.driver.load=1
-    insmod /system/lib/modules/qce.ko
-    insmod /system/lib/modules/qcedev.ko
+     insmod /system/lib/modules/qce.ko
+     insmod /system/lib/modules/qcedev.ko
 
 on property:crypto.driver.load=0
-    exec /system/bin/rmmod qcedev.ko
-    exec /system/bin/rmmod qce.ko
+     exec /system/bin/rmmod qcedev.ko
+     exec /system/bin/rmmod qce.ko
 
 # pantech server
 #service pantech_server /system/bin/pantech_server
@@ -790,9 +790,9 @@ on property:ftm_ptt_start=0
 # FEATURE_PANTECH_WLAN, 20111018 thkim_wifi add for wifi ftm mode <--
 # [FEATURE_LGU_CP_UICC_SUPPORT_NFC]
 service skypd /system/bin/skypd
-    class main
-    user system
-    group radio system shell
+   class main
+   user system
+   group radio system shell
    
 service fetch-swv /system/bin/fetch-swv
     class late_start
@@ -804,9 +804,9 @@ on property:ro.baseband.fix=true
 
 # Setting default property , LS5 p13120
 service usb_manager /system/bin/usb_manager
-    class main
-    user root    
-    oneshot
+	class main
+	user root    
+	oneshot
 	
 service conn_init /system/bin/logwrapper /system/bin/conn_init
     class late_start

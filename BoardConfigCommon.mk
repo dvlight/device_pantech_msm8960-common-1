@@ -102,7 +102,7 @@ TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 TARGET_USES_MEDIA_EXTENSIONS := true
 
 #Ril class
-BOARD_RIL_CLASS := ../../../device/pantech/msm8960-common/ril/
+BOARD_RIL_CLASS := device/pantech/msm8960-common/ril/
 TARGET_RIL_VARIANT := caf
 
 #Preload Boot Animation

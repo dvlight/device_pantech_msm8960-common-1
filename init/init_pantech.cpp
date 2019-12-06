@@ -80,10 +80,12 @@ void vendor_load_properties()
     if (strstr(device_buf, "IM-A870S")) 
     {
         property_override("ro.product.device", "ef52s");
+		property_override("telephony.lteOnGsmDevice", "1"); 
     } 
     else if (strstr(device_buf, "IM-A870K")) 
     {
         property_override("ro.product.device", "ef52k");
+		property_override("telephony.lteOnGsmDevice", "1"); 
     } 
     else if (strstr(device_buf, "IM-A870L"))
     {
@@ -94,10 +96,12 @@ void vendor_load_properties()
     if (strstr(device_buf, "IM-A860S")) 
     {
         property_override("ro.product.device", "ef51l");
+		property_override("telephony.lteOnGsmDevice", "1"); 
     } 
     else if (strstr(device_buf, "IM-A860K")) 
     {
         property_override("ro.product.device", "ef51k");
+		property_override("telephony.lteOnGsmDevice", "1"); 
     } 
     else if (strstr(device_buf, "IM-A860L"))
     {
@@ -108,10 +112,12 @@ void vendor_load_properties()
     if (strstr(device_buf, "IM-A850S")) 
     {
         property_override("ro.product.device", "ef48s");
+		property_override("telephony.lteOnGsmDevice", "1"); 
     } 
     else if (strstr(device_buf, "IM-A850K")) 
     {
         property_override("ro.product.device", "ef49k");
+		property_override("telephony.lteOnGsmDevice", "1"); 
     } 
     else if (strstr(device_buf, "IM-A850L"))
     {

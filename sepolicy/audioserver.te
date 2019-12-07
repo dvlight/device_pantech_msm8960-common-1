@@ -3,3 +3,7 @@ qmux_socket(audioserver)
 
 # Grant socket creation to audioserver
 allow audioserver self:socket create_socket_perms;
+
+allow audioserver cust_file:dir { search };
+
+allow audioserver rootfs:lnk_file { getattr };

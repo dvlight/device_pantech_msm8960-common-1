@@ -1,6 +1,9 @@
-typeattribute rmt_storage rmt_placeholder;
+allow rmt_storage rmt_debugfs:dir { search };
+allow rmt_storage rmt_debugfs:file { open write };
 
+allow rmt_storage self:capability dac_override;
+allow rmt_storage self:capability net_raw;
 allow rmt_storage self:capability sys_rawio;
+allow rmt_storage self:process execmem;
 
 allow rmt_storage kmem_device:chr_file rw_file_perms;
-allow rmt_storage self:process execmem;

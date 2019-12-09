@@ -5,10 +5,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.opengles.version=196608
 
-# IO Scheduler
-PRODUCT_PROPERTY_OVERRIDES += \
-	sys.io.scheduler=cfq
-
 # Do not power down SIM card when modem is sent to Low Power Mode.
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.radio.apm_sim_not_pwdn=1 \

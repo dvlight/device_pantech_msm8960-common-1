@@ -19,7 +19,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.telephony.call_ring.multiple=0
 
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.telephony.default_network=9 \
+	ro.telephony.default_network=22 \
 	ro.product.locale.language=ko \
 	ro.product.locale.region=KR \
 	ro.qualcomm.bt.hci_transport=smd \
@@ -56,11 +56,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Enable multiwindow mode by default
 PRODUCT_PROPERTY_OVERRIDES += \
         persist.sys.debug.multi_window=true
-
-ADDITIONAL_DEFAULT_PROPERTIES += \
-	ro.adb.secure=0 \
-	ro.secure=0 \
-	ro.allow.mock.location=1
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.com.google.clientidbase=android-pantech \

@@ -44,6 +44,8 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_FORCE_RAMDISK_ADDRESS := 0x82200000
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x2000000
 BOARD_KERNEL_CMDLINE := console=NULL,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 loglevel=0 vmalloc=0x16000000 maxcpus=2 androidboot.selinux=permissive
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
+
 
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
@@ -103,7 +105,6 @@ TARGET_USES_MEDIA_EXTENSIONS := true
 
 #Ril class
 BOARD_RIL_CLASS := ../../../device/pantech/msm8960-common/ril/
-TARGET_RIL_VARIANT := caf
 
 #Preload Boot Animation
 TARGET_BOOTANIMATION_PRELOAD 		:= true
@@ -117,6 +118,8 @@ TARGET_PROVIDES_GPS_LOC_API := true
 TARGET_POWERHAL_VARIANT			:= qcom
 #CM_POWERHAL_EXTENSION			:= lehoang
 
+# Properties
+TARGET_SYSTEM_PROP += /home/hiru/android/7.1/aex/device/pantech/msm8960-common/system.prop
 
 # Enable dex-preoptimization to speed up first boot sequence
 ifeq ($(HOST_OS),linux)

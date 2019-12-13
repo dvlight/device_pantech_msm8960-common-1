@@ -222,7 +222,4 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     MiXplorer
 
-# System properties
--include $(LOCAL_PATH)/system_prop.mk
-
 # $(call inherit-product, hardware/qcom/msm8960/msm8960.mk)

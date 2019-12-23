@@ -119,7 +119,7 @@ TARGET_POWERHAL_VARIANT			:= qcom
 #CM_POWERHAL_EXTENSION			:= lehoang
 
 # Properties
-TARGET_SYSTEM_PROP += /home/hiru/android/7.1/aex/device/pantech/msm8960-common/system.prop
+TARGET_SYSTEM_PROP += $ANDROID_BUILD_TOP/device/pantech/msm8960-common/system.prop
 
 # Enable dex-preoptimization to speed up first boot sequence
 ifeq ($(HOST_OS),linux)

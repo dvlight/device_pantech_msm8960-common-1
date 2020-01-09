@@ -175,9 +175,9 @@ EXTENDED_FONT_FOOTPRINT 			:= true
 
 # Sepolicy
 include device/qcom/sepolicy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += device/pantech/msm8960-common/sepolicy
-# SELinux
-SELINUX_IGNORE_NEVERALLOWS := true
+
+BOARD_SEPOLICY_DIRS += \
+       device/pantech/msm8960-common/sepolicy
        
 # Wifi
 BOARD_HAS_QCOM_WLAN              		:= true

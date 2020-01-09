@@ -1,2 +1,2 @@
-
 allow nfc init:unix_dgram_socket write;
+allow nfc nfc_device:chr_file { ioctl open read write };

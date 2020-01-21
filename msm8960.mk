@@ -111,10 +111,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	libcnefeatureconfig
 
+# DRM
+PRODUCT_PACKAGES += \
+    libshims_wvm
+
 # Charger
 PRODUCT_PACKAGES += \
-    charger_res_images
 
+    charger_res_images
 PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/ramdisk/res/images/charger/battery_scale.png:root/res/images/charger/battery_scale.png \
         $(LOCAL_PATH)/ramdisk/res/images/charger/battery_fail.png:root/res/images/charger/battery_fail.png

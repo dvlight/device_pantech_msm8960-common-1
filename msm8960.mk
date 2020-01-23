@@ -117,8 +117,8 @@ PRODUCT_PACKAGES += \
 
 # Charger
 PRODUCT_PACKAGES += \
-
     charger_res_images
+
 PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/ramdisk/res/images/charger/battery_scale.png:root/res/images/charger/battery_scale.png \
         $(LOCAL_PATH)/ramdisk/res/images/charger/battery_fail.png:root/res/images/charger/battery_fail.png
